@@ -1,0 +1,35 @@
+$backgroundColor: black;
+%earth {
+  background-image: url("http://fc04.deviantart.net/fs71/i/2013/070/e/d/ice_planet___kronos_by_khrymsyn-d5xqmnm.png");
+}
+%moon {
+  background-image: url("http://th02.deviantart.net/fs71/PRE/i/2012/337/3/6/planet_png_by_phip_phantom-d5mwylq.png");
+}
+
+@mixin dimension($diameter) {
+  margin: -($diameter/2) 0 0 0-($diameter/2);
+  height: $diameter;
+  width: $diameter;
+}
+
+html,
+body {
+  background-color: $backgroundColor;
+}
+
+.planet {
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.earth {
+  @include dimension(200px);
+  @extend %earth;
+}
+
+.moon {
+  @include dimension(150px);
+  @extend %moon;
+}
